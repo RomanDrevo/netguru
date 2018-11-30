@@ -7,3 +7,5 @@ const bootstrapper = () =>{
         testStore
     }
 }
+
+export default bootstrapper
