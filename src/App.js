@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import logo from './logo.svg';
 import './App.css';
 import {inject, observer} from "mobx-react";
+import {Col, Grid, Row} from "react-bootstrap";
 
 @inject('testStore')
 @observer
@@ -23,7 +24,9 @@ class App extends Component {
 
 
         return (
-            <div className="App">
+            <Grid>
+                <Row>
+                    <Col sm={12}>
                 {/*<header className="App-header">*/}
                     {/*<img src={logo} className="App-logo" alt="logo"/>*/}
                     {/*<p>*/}
@@ -40,9 +43,11 @@ class App extends Component {
                 {/*</header>*/}
 
                 {
-                    testStore.posts.map(post => <h2 key={post.id}>{post.name}</h2>)
+                    testStore.posts.map(post => <h2 className="" key={post.id}>{post.name}</h2>)
                 }
-            </div>
+                    </Col>
+                </Row>
+            </Grid>
         );
     }
 }
